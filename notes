@@ -1,0 +1,13 @@
+#!/bin/sh
+
+[ -z $NOTESDIR ] && NOTESDIR=~/.notes
+[ -d $NOTESDIR ] || mkdir $NOTESDIR
+
+if [ -n "$1" ] ; then
+    # I change into the directory so that its easy to open other notes from 
+    # within the editor
+    cd $NOTESDIR
+    vi $1
+else
+    ls -l $NOTESDIR
+fi

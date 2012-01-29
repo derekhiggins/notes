@@ -1,0 +1,15 @@
+
+
+# make listing notes easier by adding command line completion
+_notes()
+{
+    [ -z $NOTESDIR ] && NOTESDIR=~/.notes
+    local cur opts
+    cur="${COMP_WORDS[COMP_CWORD]}"
+    opts=$(ls $NOTESDIR/$2* 2> /dev/null | sed -e 's/.*\///g')
+
+    COMPREPLY=( $(compgen -W "${opts}" ${cur}) )
+}
+complete -F _notes notes
+
+

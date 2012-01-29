@@ -1,0 +1,39 @@
+Small and simple note organising shell script
+
+This script can be used to maintain a directory of notes for quick access,
+there isn't much to it, but it can be handy
+
+Installation :
+    simply arrange so that the file "notes" can be found in your PATH
+
+Usage :
+    # Edit a note named "foobar"
+    > note foobar
+
+    # list all known notes
+    > note
+
+Bash completion :
+    if you want to setup bash completion then you can do one of
+    o source the contents of notes.completion in the file ~/.bashrc by adding
+    this line
+    . /path/to/notes.completion
+
+    or
+
+    o place the contents of notes.completion into the file ~/.bashrc
+
+    or
+
+    o place a copy of the file notes.completion in the global bash
+    completion config directory, (probably the directory /etc/bash_completion.d/)
+
+    once done (you will need to reload by opening a new terminal)
+    hitting tab x 2, should bring up a list of possible notes e.g.
+    > note f<tab><tab>
+fedora_network  fedex_details
+
+
+Config :
+    the environment variable $NOTESDIR can be used to change the location
+    to store the notes, it defaults to ~/.notes
