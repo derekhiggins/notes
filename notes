@@ -9,5 +9,5 @@ if [ -n "$1" ] ; then
     cd $NOTESDIR
     vi $1
 else
-    ls -l $NOTESDIR
+    ls -ltr $NOTESDIR
 fi
