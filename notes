@@ -4,6 +4,20 @@
 [ -d "$NOTESDIR" ] || mkdir $NOTESDIR
 
 [ -z "$NOTESEDITOR" ] && NOTESEDITOR=vi
+case $1 in
+-g)  # greps the notes
+  cd $NOTESDIR
+  shift
+  grep -r "$@" .
+  exit 1
+  ;;
+-c)  # cat the notes
+  cd $NOTESDIR
+  shift
+  cat $@
+  exit 1
+  ;;
+esac
 
 if [ -n "$1" ] ; then
     # I change into the directory so that its easy to open other notes from 
