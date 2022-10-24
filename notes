@@ -3,12 +3,12 @@
 [ -z "$NOTESDIR" ] && NOTESDIR=~/.notes
 [ -d "$NOTESDIR" ] || mkdir $NOTESDIR
 
-[ -z "$NOTESEDITOR" ] && NOTESEDITOR=vi
+[ -z "$NOTESEDITOR" ] && NOTESEDITOR=vim
 case $1 in
 -g)  # greps the notes
   cd $NOTESDIR
   shift
-  grep -r "$@" .
+  grep -r -e "$@" .
   exit 1
   ;;
 -c)  # cat the notes
